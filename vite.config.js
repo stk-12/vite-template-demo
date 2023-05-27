@@ -20,17 +20,16 @@ export default defineConfig({
           //   extType = 'images';
           // }
 
-          //ビルド時のCSS名を明記してコントロールする
+          //ビルド時のCSS名
           if(extType === 'css') {
             return `assets/css/style.css`;
           }
           return `assets/${extType}/[name][extname]`;
         },
         chunkFileNames: 'assets/js/[name].js',
+        // entryFileNames: 'assets/js/[name].js',
+        entryFileNames: 'assets/js/script.js',
         // chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name].js',
-        // chunkFileNames: 'assets/js/bundle.js',
-        // entryFileNames: 'assets/js/bundle.js',
       },
       //生成オブジェクトを渡す
       input:{
