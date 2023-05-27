@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite';
+import autoprefixer from "autoprefixer";
 
-//import設定を追記
-import { resolve } from 'path';
+// import設定を追記
+// import { resolve } from 'path';
 
 
 export default defineConfig({
-  base: "/base_url/", //ベースとなるパブリックパス
+  // base: "/base_url/", //ベースパス（ルートパス）
+  base: "./", //ベースパス（相対パス）
   root: "./src", //開発ディレクトリ設定 index.htmlが置かれている場所
   // publicDir: resolve(__dirname, 'src/public'),
   // publicDir: "./src/public",
@@ -33,9 +35,15 @@ export default defineConfig({
       },
       //生成オブジェクトを渡す
       input:{
-        index: resolve(__dirname, './src/index.html'),
+        main: './src/index.html',
+        // index: resolve(__dirname, './src/index.html'),
         // about: resolve(__dirname, './src/about/index.html')
       }
     },
 	},
+  css: {
+    postcss: {
+      plugins: [autoprefixer]
+    }
+  },
 });
