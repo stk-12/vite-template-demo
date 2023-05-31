@@ -1,6 +1,7 @@
+@use "global" as *;
 
 body {
-  background: #ccc;
+  background: $colorBase;
 }
 p {
   transform: rotate(45deg);
