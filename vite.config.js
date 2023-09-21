@@ -1,7 +1,17 @@
 import { defineConfig } from 'vite';
 import autoprefixer from "autoprefixer";
 // import viteImagemin from 'vite-plugin-imagemin';
-import imageminPlugin from '@macropygia/vite-plugin-imagemin-cache'
+import imageminPlugin from '@macropygia/vite-plugin-imagemin-cache';
+import handlebars from 'vite-plugin-handlebars';
+
+// const pageData = {
+//   '/index.html': {
+//     title: 'トップページ',
+//   },
+//   '/contact.html': {
+//     title: 'お問い合わせ',
+//   },
+// };
 
 // import設定を追記
 import { resolve } from 'path';
@@ -142,6 +152,14 @@ export default defineConfig({
       // asset: {
       //   useCrc: true,
       // }
+    }),
+    handlebars({
+      //コンポーネントの格納ディレクトリを指定
+      partialDirectory: resolve(__dirname, './src/components'),
+      //各ページ情報の読み込み
+      // context(pagePath) {
+      //   return pageData[pagePath];
+      // },
     }),
   ],
   

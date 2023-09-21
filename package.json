@@ -12,6 +12,7 @@
     "autoprefixer": "^10.4.14",
     "sass": "^1.62.1",
     "vite": "^4.3.2",
+    "vite-plugin-handlebars": "^1.6.0",
     "vite-plugin-imagemin": "^0.6.1"
   },
   "dependencies": {
